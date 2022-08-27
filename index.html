@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <!-- <meta http-equiv="Refresh" content="10"> -->
         <meta charset="utf-8">
         <title>hjc-love-code</title>
         <canvas id="canvas" style="background:black" width="620" height="340"></canvas>
@@ -18,7 +19,7 @@
             var drops = [];
             for(var i=0;i<colunms;i++){
                 drops.push(0);
-            }
+        }
         var str ="011";
             function draw(){
                 context.fillStyle = "rgba(0,0,0,0.05)";
@@ -41,10 +42,13 @@
                 var g = Math.floor(Math.random() * 256);
                 var b = Math.floor(Math.random() * 256);
                 return "rgb("+r+","+g+","+b+")";
-            }
+            };
             draw();
             setInterval(draw,50); 
         };
+        function resizeFresh(){
+            location.reload();
+        }
     </script>
     <style type="text/css">
         body{margin: 0; padding: 0;}
@@ -107,7 +111,7 @@
         font-weight: bold;
         }
     </style> 
-    <body>
+    <body onresize="resizeFresh()">
         <div style="background-color: rgb(255, 255, 255); height: 45px;position:fixed;" id="head-div">
             <input type="button" value=" About Me " style="display:inline-block;margin-right: 10px;">
             <input type="button" value=" My Note/Blog " style="display:inline-block;margin-right: 1px" onclick="window.location.href='pages/note.html' ">
