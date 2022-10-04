@@ -1,0 +1,32 @@
+div{
+    animation: fadeInAnimation ease 3s; 
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+@keyframes fadeInAnimation { 
+    0% { 
+        opacity: 0;
+    } 
+    100% { 
+        opacity: 1; 
+    } 
+} 
+#button-div { 
+    z-index: 999;
+    left: calc(50% - 35px);
+    top: calc(60% - 0px);
+    border-radius:30px;
+    margin-top: 10px;
+    font-size: 200;
+}
+button {
+    border-top: 0px;
+    border-right: 0px;
+    border-left: 0px;
+    border-bottom: 0px;
+    background-color: transparent;
+    
+}
+button:hover { 
+    font-weight: bold;
+}

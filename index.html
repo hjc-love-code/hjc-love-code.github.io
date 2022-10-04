@@ -1,135 +1,70 @@
 <!DOCTYPE html>
 <html>
+    <link rel="stylesheet" href="index-page.css" type="text/css" > 
     <head>
         <!-- <meta http-equiv="Refresh" content="10"> -->
         <meta charset="utf-8">
         <title>hjc-love-code</title>
         <canvas id="canvas" style="background:black" width="620" height="340"></canvas>
-    <!-- background image-->
-    <script type="text/javascript">
-        window.onload = function(){
-            var canvas = document.getElementById("canvas");
-            var context = canvas.getContext("2d");
-            var W = window.screen.width;
-            var H = window.screen.height;
-            canvas.width = W;
-            canvas.height = H;
-            var fontSize = 15;
-            var colunms = Math.floor(W /fontSize);
-            var drops = [];
-            for(var i=0;i<colunms;i++){
-                drops.push(0);
-        }
-        var str ="011";
-            function draw(){
-                context.fillStyle = "rgba(0,0,0,0.05)";
-                context.fillRect(0,0,W,H);
-                context.font = fontSize + 'px arial';
-                context.fillStyle ="green";
+        <!-- background image-->
+        <script type="text/javascript">
+            document.body.parentNode.style.overflowY= "hidden";
+            document.body.parentNode.style.overflowX= "hidden";
+            window.onload = function(){
+                var canvas = document.getElementById("canvas");
+                var context = canvas.getContext("2d");
+                var W = window.screen.width;
+                var H = window.screen.height;
+                canvas.width = W;
+                canvas.height = H;
+                var fontSize = 15;
+                var colunms = Math.floor(W /fontSize);
+                var drops = [];
                 for(var i=0;i<colunms;i++){
-                    var index = Math.floor(Math.random() * str.length);
-                    var x = i*fontSize;
-                    var y = drops[i] *fontSize;
-                    context.fillText(str[index],x,y);
-                    if(y >= canvas.height && Math.random() > 0.92){
-                        drops[i] = 0;
+                    drops.push(0);
+            }
+            var str ="011";
+                function draw(){
+                    context.fillStyle = "rgba(0,0,0,0.05)";
+                    context.fillRect(0,0,W,H);
+                    context.font = fontSize + 'px arial';
+                    context.fillStyle ="green";
+                    for(var i=0;i<colunms;i++){
+                        var index = Math.floor(Math.random() * str.length);
+                        var x = i*fontSize;
+                        var y = drops[i] *fontSize;
+                        context.fillText(str[index],x,y);
+                        if(y >= canvas.height && Math.random() > 0.92){
+                            drops[i] = 0;
+                        }
+                        drops[i]++;
                     }
-                    drops[i]++;
-                }
+                };
+                function randColor(){7
+                    var r = Math.floor(Math.random() * 256);
+                    var g = Math.floor(Math.random() * 256);
+                    var b = Math.floor(Math.random() * 256);
+                    return "rgb("+r+","+g+","+b+")";
+                };
+                draw();
+                setInterval(draw,50); 
             };
-            function randColor(){7
-                var r = Math.floor(Math.random() * 256);
-                var g = Math.floor(Math.random() * 256);
-                var b = Math.floor(Math.random() * 256);
-                return "rgb("+r+","+g+","+b+")";
-            };
-            draw();
-            setInterval(draw,50); 
-        };
-    </script>
-    <style type="text/css">
-        body{margin: 0; padding: 0;}
-        div{
-            position: fixed;
-            z-index: 999;
-            top: calc(50% - 0px);
-            color: #fff;
-        }
-    </style>
+        </script>
     </head>
     <!--object-->
-    <style type="text/css">
-        #head-div { 
-            position: fixed;
-            right: calc(1% - 0px);
-            z-index: 999;
-            top: calc(0% - -10px);
-            color: black;
-            border-radius:15px;
-            margin-top: 10px;
-
-        }
-        #title-div { 
-            left: calc(50% - 180px);
-            z-index: 999;
-            top: calc(7% - 0px);
-            font-family: Arial, Helvetica, sans-serif;
-
-        }
-        #code-div {
-            top: calc(45%);
-            left: calc(50% - 220px);
-            border-radius: 10px;
-            border-width: 3px;
-            border-color: rgb(80, 80, 80);
-            background-color: rgb(80, 80, 80);
-            color: white;
-            width: 450px;
-            height: 275px;
-            opacity: 0.7;
-            line-height: 4px;
-            font-family: "Lucida Console", "Courier New", monospace;
-            font-weight:bold;
-
-        }
-        input {
-            border-bottom: 0px ;  
-            border-top:0px;  
-            border-left:0px;  
-            border-right:0px;  
-            color: black;
-            float:right;
-            background-color: transparent;
-            font-size: 130%;
-            margin-top: 9px;
-        }
-        input:hover {
-        font-weight: bold;
-        }
-    </style> 
     <body>
-        <div style="background-color: rgb(255, 255, 255); height: 45px;position:fixed;" id="head-div">
+        <div style="height: 45px;position:fixed;" id="head-div">
             <input type="button" value=" About Me " style="display:inline-block;margin-right: 10px;">
-            <input type="button" value=" My Note/Blog " style="display:inline-block;margin-right: 1px" onclick="window.location.href='pages/note.html' ">
-            <input type="button" value=" My Github " style="display:inline-block;margin-right: 1px" onclick="window.location.href= 'https://github.com/hjc-love-code/' ">
-            <input type="button" value=" Home " style="display:inline-block;margin-right: 1px" onclick="window.location.href='./index.html' ">
+            <input type="button" value=" My Note/Blog " style="display:inline-block;" onclick="window.location.href='pages/start.html' ">
+            <input type="button" value=" My Github " style="display:inline-block;" onclick="window.location.href= 'https://github.com/hjc-love-code/' ">
+            <input type="button" value=" Home " style="display:inline-block;" onclick="window.location.href='./index.html' ">
         </div>
         <div id="title-div">
-            <h1 align="center" style="color:white;">WELCOME TO MY PAGE</h1>
-            <h2 align="center" style="color:white">Let's coding every day</h2>
+            <h1 align="center" style="color:white;">WELCOME HERE</h1>
+            <h1 align="center" style="color:white;">Let's have our coding adventure!</h1>
+            <div style="background-color: white;height: 60px;width: 130px;" id="button-div">
+                <button style="margin-top: 18px; margin-left: 43px;font-size: 130%;" onclick="window.location.href='pages/start.html' ">GO</button>
+            </div>
         </div>
-        <div id="code-div" style="font-size: 16px;">
-            <p style="margin-left: 5px;font-size: 25px;text-align: center;">Tips for coding</p>
-            <p style="margin-left: 5px; color: transparent;font-size: 20px;">h</p>
-            <p style="margin-left: 5px;">1.All problems in computer science</p>
-            <p style="margin-left: 5px;">can be solved by another level of indirection.</p>
-            <p style="margin-left: 5px; color: transparent;">h</p>
-            <p style="margin-left: 5px;">2.Programming is like sex. One mistake</p>
-            <p style="margin-left: 5px;">and you have to support it for the rest</p>
-            <p style="margin-left: 5px;">of your life.</p>
-            <p style="margin-left: 5px; color: transparent;">h</p>
-            <p style="margin-left: 5px;">3.It's harder to read code than to write it.</p>
-        </div>
-
     </body>
 </html>
