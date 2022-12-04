@@ -8,7 +8,7 @@
         <!-- background image-->
         <style>
             #send-button {
-                margin-left: 25%;
+                margin-left: 28%;
                 height: 30px; 
                 border-radius: 10px; 
                 border-color: transparent; 
@@ -19,21 +19,30 @@
             #send-button:hover {
                 background-color: darkblue;
             }
+            #blog-button {
+                border-radius: 10px; 
+                border-color: transparent; 
+                color:black;
+                border-width: 3px;
+                background-color: white;
+            }
+            #blog-button:hover {
+                background-color: lightgray;
+            }
+            
 			#blog {
-				display:inline-block;
 				background-color:rgb(48, 42, 42);
 				border-radius:15px;
-				width:65%;
 				color:white;
-				margin-left:20px;
-				position:fixed;
+				margin-left:40px;
 				height:125px;
+                margin-top: 15px;
 			}
         </style>
     </head>
     <!--object-->
     <body style="background-color: rgb(57, 57, 58);">
-        <div style="color: white;border-right: 3px dashed black;width: 300px;display:inline-block;">
+        <div style="color: white;border-right: 3px dashed black;width: 300px;display:inline-block;position:fixed">
             <img src="Me.png" alt="hjc-love-code" width="225" height="225" style="margin-left:35px;border-radius: 150px;margin-top: 5px;">
             <p style="font-size: 25px;margin-left: 70px;font-weight:bold">
                 hjc-love-code
@@ -45,30 +54,36 @@
             <br/><br/>
             <button id="send-button">Send Feedback</button>
         </div>
-		<div id="blog" >
-			<h2 style="margin-left:10px;">PragmaticTools</h2>
-            <p style="margin-left:10px;">A command Tools that can help you to have easy use with your computer.</p>
-            <button style="float: right;margin-right: 20px;" onclick="window.location.href = ('https://github.com/hjc-love-code/PragmaticTools')">Show on github</button>
-            <button style="float: right;margin-right: 20px;">View details</button>
-		</div>
-        <div id="blog" style="margin-top:135px">
-			<h2 style="margin-left:10px;">XYD-Lesson</h2>
-            <p style="margin-left:10px;">This is my C++ and CSP-J learning path from XYD</p>
-            <button style="float: right;margin-right: 20px;" onclick="window.location.href = ('https://github.com/hjc-love-code/XYD-lesson')">Show on github</button>
-            <button style="float: right;margin-right: 20px;">View details</button>
-		</div>
-        <div id="blog" style="margin-top:270px">
-			<h2 style="margin-left:10px;">hjc-love-code.github.io</h2>
-            <p style="margin-left:10px;">This is my own web page!</p>
-            <button style="float: right;margin-right: 20px;" onclick="window.location.href = ('https://github.com/hjc-love-code/hjc-love-code.github.io')">Show on github</button>
-            <button style="float: right;margin-right: 20px;">View details</button>
-		</div>
-        <div id="blog" style="margin-top:405px">
-			<h2 style="margin-left:10px;">PaintBoard</h2>
-            <p style="margin-left:10px;">This is a project to simulate a app like Windows Paint</p>
-            <button style="float: right;margin-right: 20px;" onclick="window.location.href = ('https://github.com/hjc-love-code/paintBoard')">Show on github</button>
-            <button style="float: right;margin-right: 20px;">View details</button>
-            
-		</div>
+        <!--blog area-->
+        <div style="display:inline-block;width: 70%;position: absolute;top: 10px;margin-left: 300px;">
+            <div id="blog">
+                <p style="color:transparent;font-size:0.01px;" >space</p>
+                <h2 style="margin-left:10px;">PragmaticTools</h2>
+                <p style="margin-left:10px;">A command Tools that can help you to have easy use with your computer.</p>
+                <button id="blog-button" style="margin-right: 20px;margin-top: -10px;float: right;" onclick="window.location.href = ('https://github.com/hjc-love-code/PragmaticTools')">Show on github</button>
+                <button id="blog-button" style="margin-right: 10px;margin-top: -10px;float: right;">View details</button>
+            </div>
+            <div id="blog" >
+                <p style="color:transparent;font-size:0.01px;" >space</p>
+                <h2 style="margin-left:10px;">XYD-Lesson</h2>
+                <p style="margin-left:10px;">This is my C++ and CSP-J learning path from XYD</p>
+                <button id="blog-button" style="margin-right: 20px;margin-top: -10px;float: right;" onclick="window.location.href = ('https://github.com/hjc-love-code/XYD-lesson')">Show on github</button>
+                <button id="blog-button" style="margin-right: 10px;margin-top: -10px;float: right;">View details</button>
+            </div>
+            <div id="blog" >
+                <p style="color:transparent;font-size:0.01px;" >space</p>
+                <h2 style="margin-left:10px;">hjc-love-code.github.io</h2>
+                <p style="margin-left:10px;">This is my own web page!</p>
+                <button id="blog-button" style="margin-right: 20px;margin-top: -10px;float: right;" onclick="window.location.href = ('https://github.com/hjc-love-code/hjc-love-code.github.io')">Show on github</button>
+                <button id="blog-button" style="margin-right: 10px;margin-top: -10px;float: right;">View details</button>
+            </div>
+            <div id="blog" >
+                <p style="color:transparent;font-size:0.01px;" >space</p>
+                <h2 style="margin-left:10px;">PaintBoard</h2>
+                <p style="margin-left:10px;">This is a project to simulate a app like Windows Paint</p>
+                <button id="blog-button" style="margin-right: 20px;margin-top: -10px;float: right;" onclick="window.location.href = ('https://github.com/hjc-love-code/paintBoard')">Show on github</button>
+                <button id="blog-button"style="margin-right: 10px;margin-top: -10px;float: right;">View details</button>
+            </div>
+        </div>
     </body>
 </html>
